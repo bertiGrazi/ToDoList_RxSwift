@@ -26,7 +26,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EkX-rM-dcD">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskTableViewCell" id="B5Y-9N-zqq">
@@ -56,7 +56,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EkX-rM-dcD" secondAttribute="trailing" id="uUh-d5-H3f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="GoodList" id="GnH-It-gSc"/>
+                    <navigationItem key="navigationItem" title="GoodList" id="2p8-hK-6gE">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Cy8-VQ-lQt">
+                            <connections>
+                                <segue destination="Zy6-4g-Egg" kind="presentation" id="VKt-lP-Pgr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="prioritySegmentedControl" destination="cld-vP-xFe" id="AyU-GV-vpw"/>
                         <outlet property="tableView" destination="EkX-rM-dcD" id="v87-gF-ck9"/>
@@ -65,6 +72,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="763.768115942029" y="93.75"/>
+        </scene>
+        <!--Add Task-->
+        <scene sceneID="Tk4-17-SCh">
+            <objects>
+                <viewController title="Add Task" id="PNS-M7-bRZ" customClass="AddTaskViewController" customModule="ToDoListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vfE-lW-CKg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JGh-Ae-DOz">
+                                <rect key="frame" x="103" y="121" width="208" height="32"/>
+                                <segments>
+                                    <segment title="High"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Low"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJR-2v-ody">
+                                <rect key="frame" x="28" y="202" width="347" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qeG-Cp-h0H"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JGh-Ae-DOz" firstAttribute="leading" secondItem="qeG-Cp-h0H" secondAttribute="leading" constant="103" id="Chc-0F-Pe3"/>
+                            <constraint firstItem="JGh-Ae-DOz" firstAttribute="centerX" secondItem="vfE-lW-CKg" secondAttribute="centerX" id="Zfe-c7-rok"/>
+                            <constraint firstItem="JGh-Ae-DOz" firstAttribute="top" secondItem="qeG-Cp-h0H" secondAttribute="top" constant="65" id="cZx-1j-uTu"/>
+                            <constraint firstItem="qeG-Cp-h0H" firstAttribute="trailing" secondItem="eJR-2v-ody" secondAttribute="trailing" constant="39" id="d6f-g8-S13"/>
+                            <constraint firstItem="eJR-2v-ody" firstAttribute="top" secondItem="JGh-Ae-DOz" secondAttribute="bottom" constant="50" id="diy-Gk-ucv"/>
+                            <constraint firstItem="eJR-2v-ody" firstAttribute="leading" secondItem="qeG-Cp-h0H" secondAttribute="leading" constant="28" id="rut-UE-VuU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Task" id="Gmv-dy-D51">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="svN-r5-BJg"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E1y-zf-g5K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2602.898550724638" y="93.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nVg-qR-T6w">
@@ -84,8 +132,27 @@
             </objects>
             <point key="canvasLocation" x="-146.37681159420291" y="93.75"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZRM-rx-q2V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zy6-4g-Egg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y3B-bi-Bui">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PNS-M7-bRZ" kind="relationship" relationship="rootViewController" id="55o-bv-eiL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="28Q-HB-4FB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693" y="94"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
