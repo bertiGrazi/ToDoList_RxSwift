@@ -16,6 +16,7 @@
 		F2FE34C0261CA248005B8E1A /* ToDoListAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE34BF261CA248005B8E1A /* ToDoListAppTests.swift */; };
 		F2FE34CB261CA248005B8E1A /* ToDoListAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE34CA261CA248005B8E1A /* ToDoListAppUITests.swift */; };
 		F2FE34E0261CA36F005B8E1A /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE34DF261CA36F005B8E1A /* TaskListViewController.swift */; };
+		F2FE34E5261CAA49005B8E1A /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FE34E4261CAA49005B8E1A /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F2FE34CA261CA248005B8E1A /* ToDoListAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListAppUITests.swift; sourceTree = "<group>"; };
 		F2FE34CC261CA248005B8E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2FE34DF261CA36F005B8E1A /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		F2FE34E4261CAA49005B8E1A /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				F2FE34DF261CA36F005B8E1A /* TaskListViewController.swift */,
+				F2FE34E4261CAA49005B8E1A /* AddTaskViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				F2FE34E0261CA36F005B8E1A /* TaskListViewController.swift in Sources */,
 				F2FE34A8261CA243005B8E1A /* SceneDelegate.swift in Sources */,
 				F2FE34B0261CA243005B8E1A /* ToDoListApp.xcdatamodeld in Sources */,
+				F2FE34E5261CAA49005B8E1A /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
