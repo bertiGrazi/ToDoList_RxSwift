@@ -59,7 +59,8 @@
                     <navigationItem key="navigationItem" title="GoodList" id="2p8-hK-6gE">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="Cy8-VQ-lQt">
                             <connections>
-                                <segue destination="Zy6-4g-Egg" kind="presentation" id="VKt-lP-Pgr"/>
+                                <action selector="addTaskButton:" destination="BYZ-38-t0r" id="5XK-v1-wq8"/>
+                                <segue destination="Zy6-4g-Egg" kind="presentation" id="ba9-2f-n9z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -115,7 +116,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="prioritySegmetedControl" destination="JGh-Ae-DOz" id="Fzd-8V-0sk"/>
-                        <outlet property="saveButton" destination="svN-r5-BJg" id="o5e-u3-Tai"/>
                         <outlet property="taskTitleTextField" destination="eJR-2v-ody" id="bFW-4t-Hyw"/>
                     </connections>
                 </viewController>
