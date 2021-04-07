@@ -17,7 +17,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     private var tasks = BehaviorRelay<[Task]>(value: [])
-    
+    private var filterTasks = [Task]()
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,16 +44,36 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         addTVC.taskSubjectObservable
-            .subscribe(onNext: { task in
+            .subscribe(onNext: { [weak self ]task in
                 //print(task)
                 
                 //filter
-                let priority = Priority(rawValue: self.prioritySegmentedControl.selectedSegmentIndex - 1)
-                var existingTask = self.tasks.value
-                existingTask.append(task)
-                self.tasks.accept(existingTask)
+                let priority = Priority(rawValue: (self?.prioritySegmentedControl.selectedSegmentIndex)! - 1)
                 
+                var existingTask = self?.tasks.value
+                existingTask!.append(task)
+                self?.tasks.accept(existingTask!)
+                
+                self!.filterTasks(by: priority)
             }).disposed(by: disposeBag)
+    }
+    
+    @IBAction func priorityValueChanged(segmentedControl: UISegmentedControl) {
+        let priority = Priority(rawValue: segmentedControl.selectedSegmentIndex - 1)
+        filterTasks(by: priority)
+    }
+    
+    private func filterTasks(by priority: Priority?) {
+        if priority == nil {
+            self.filterTasks = self.tasks.value
+        } else {
+            self.tasks.map { tasks in
+                return tasks.filter { $0.priority == priority! }
+            }.subscribe(onNext: { tasks in
+                self.filterTasks = tasks
+                print(tasks)
+            }).disposed(by: disposeBag)
+        }
     }
 
 }
